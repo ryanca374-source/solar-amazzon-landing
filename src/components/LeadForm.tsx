@@ -8,7 +8,6 @@ import {
   createWhatsappLink,
   formatWhatsappDisplay,
   isValidWhatsappNumber,
-  normalizeWhatsappNumber,
 } from '../lib/whatsapp'
 
 type LeadFormState = {
@@ -81,7 +80,7 @@ export const LeadForm = () => {
       trackEvent('lead_form_submit', {
         city: form.city.trim(),
         installationType: form.installationType,
-        contact: normalizeWhatsappNumber(form.whatsapp),
+        energyBillRange: form.energyBillRange,
       })
       trackEvent('whatsapp_click', { source: 'lead_form' })
 
