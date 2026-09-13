@@ -84,7 +84,14 @@ export const LeadForm = () => {
       })
       trackEvent('whatsapp_click', { source: 'lead_form' })
 
-      window.open(whatsappLink, '_blank', 'noopener,noreferrer')
+      const openedWindow = window.open(whatsappLink, '_blank', 'noopener,noreferrer')
+      if (!openedWindow) {
+        setErrorMessage(
+          'Não foi possível abrir o WhatsApp automaticamente. Libere pop-ups e tente novamente.',
+        )
+        return
+      }
+
       setStatusMessage(
         'Dados enviados! O WhatsApp foi aberto com sua mensagem preenchida para a Solar Amazzon.',
       )

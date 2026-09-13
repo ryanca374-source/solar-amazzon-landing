@@ -45,7 +45,7 @@ npm run preview
 
 1. Rode `npm run build`
 2. Publique o conteúdo de `dist/` no branch de publicação (ou use GitHub Actions)
-3. Como o app usa HashRouter, funciona sem configuração extra de rewrite
+3. Como o app usa `BrowserRouter`, configure fallback SPA (ex.: copiar `index.html` para `404.html` no deploy do Pages)
 
 ### Vercel
 
