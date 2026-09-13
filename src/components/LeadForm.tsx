@@ -210,11 +210,23 @@ export const LeadForm = () => {
       </label>
 
       {errorMessage ? (
-        <p className="rounded-lg bg-red-50 px-3 py-2 text-sm text-red-700">{errorMessage}</p>
+        <p
+          role="alert"
+          aria-live="assertive"
+          className="rounded-lg bg-red-50 px-3 py-2 text-sm text-red-700"
+        >
+          {errorMessage}
+        </p>
       ) : null}
 
       {statusMessage ? (
-        <p className="rounded-lg bg-green-50 px-3 py-2 text-sm text-green-700">{statusMessage}</p>
+        <p
+          role="status"
+          aria-live="polite"
+          className="rounded-lg bg-green-50 px-3 py-2 text-sm text-green-700"
+        >
+          {statusMessage}
+        </p>
       ) : null}
 
       <button

@@ -37,4 +37,4 @@ Novo cliente interessado em energia solar!
 Entre em contato com o cliente para realizar a simulação e apresentar uma proposta.`
 
 export const createWhatsappLink = (phone: string, message: string) =>
-  `https://wa.me/${phone}?text=${encodeURIComponent(message)}`
+  `https://wa.me/${phone.replace(ONLY_DIGITS_REGEX, '')}?text=${encodeURIComponent(message)}`
