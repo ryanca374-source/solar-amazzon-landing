@@ -4,10 +4,6 @@ let gaInitialized = false
 let metaInitialized = false
 
 export const initTrackers = () => {
-  if (gaInitialized && metaInitialized) {
-    return
-  }
-
   if (!gaInitialized && appConfig.googleAnalyticsId) {
     if (typeof window.gtag !== 'function') {
       const gaScript = document.createElement('script')

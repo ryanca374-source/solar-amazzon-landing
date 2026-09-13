@@ -77,13 +77,6 @@ export const LeadForm = () => {
 
       const whatsappLink = createWhatsappLink(appConfig.whatsappNumber, message)
 
-      trackEvent('lead_form_submit', {
-        city: form.city.trim(),
-        installationType: form.installationType,
-        energyBillRange: form.energyBillRange,
-      })
-      trackEvent('whatsapp_click', { source: 'lead_form' })
-
       const openedWindow = window.open(whatsappLink, '_blank', 'noopener,noreferrer')
       if (!openedWindow) {
         setErrorMessage(
@@ -91,6 +84,13 @@ export const LeadForm = () => {
         )
         return
       }
+
+      trackEvent('lead_form_submit', {
+        city: form.city.trim(),
+        installationType: form.installationType,
+        energyBillRange: form.energyBillRange,
+      })
+      trackEvent('whatsapp_click', { source: 'lead_form' })
 
       setStatusMessage(
         'Dados enviados! O WhatsApp foi aberto com sua mensagem preenchida para a Solar Amazzon.',
