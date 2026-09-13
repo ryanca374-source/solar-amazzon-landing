@@ -31,12 +31,14 @@ const INITIAL_STATE: LeadFormState = {
 export const LeadForm = () => {
   const [form, setForm] = useState<LeadFormState>(INITIAL_STATE)
   const [statusMessage, setStatusMessage] = useState('')
+  const [fallbackWhatsappLink, setFallbackWhatsappLink] = useState('')
   const [errorMessage, setErrorMessage] = useState('')
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault()
     setErrorMessage('')
     setStatusMessage('')
+    setFallbackWhatsappLink('')
 
     if (
       !form.name.trim() ||
@@ -77,13 +79,7 @@ export const LeadForm = () => {
 
       const whatsappLink = createWhatsappLink(appConfig.whatsappNumber, message)
 
-      const openedWindow = window.open(whatsappLink, '_blank', 'noopener,noreferrer')
-      if (!openedWindow) {
-        setErrorMessage(
-          'Não foi possível abrir o WhatsApp automaticamente. Libere pop-ups e tente novamente.',
-        )
-        return
-      }
+      window.open(whatsappLink, '_blank', 'noopener,noreferrer')
 
       trackEvent('lead_form_submit', {
         city: form.city.trim(),
@@ -92,6 +88,7 @@ export const LeadForm = () => {
       })
       trackEvent('whatsapp_click', { source: 'lead_form' })
 
+      setFallbackWhatsappLink(whatsappLink)
       setStatusMessage(
         'Dados enviados! O WhatsApp foi aberto com sua mensagem preenchida para a Solar Amazzon.',
       )
@@ -226,6 +223,21 @@ export const LeadForm = () => {
           className="rounded-lg bg-green-50 px-3 py-2 text-sm text-green-700"
         >
           {statusMessage}
+          {fallbackWhatsappLink ? (
+            <>
+              {' '}
+              Se não abrir automaticamente,{' '}
+              <a
+                href={fallbackWhatsappLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-semibold underline"
+              >
+                clique aqui
+              </a>
+              .
+            </>
+          ) : null}
         </p>
       ) : null}
 

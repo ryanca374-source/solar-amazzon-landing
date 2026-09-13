@@ -24,18 +24,31 @@ export const initTrackers = () => {
 
   if (!metaInitialized && appConfig.metaPixelId) {
     if (typeof window.fbq !== 'function') {
+      type FbqInitFn = ((...args: unknown[]) => void) & {
+        callMethod?: (...args: unknown[]) => void
+        push?: (...args: unknown[]) => void
+        loaded?: boolean
+        version?: string
+        queue?: unknown[][]
+      }
+      const fbq: FbqInitFn = (...args: unknown[]) => {
+        if (fbq.callMethod) {
+          fbq.callMethod(...args)
+          return
+        }
+        fbq.queue = fbq.queue || []
+        fbq.queue.push(args)
+      }
+      fbq.push = (...args: unknown[]) => fbq(...args)
+      fbq.loaded = true
+      fbq.version = '2.0'
+      fbq.queue = []
+      window.fbq = fbq
+
       const metaScript = document.createElement('script')
       metaScript.async = true
       metaScript.src = 'https://connect.facebook.net/en_US/fbevents.js'
       document.head.appendChild(metaScript)
-
-      type FbqFn = ((...args: unknown[]) => void) & { queue?: unknown[][] }
-      const fbq: FbqFn = (...args: unknown[]) => {
-        fbq.queue = fbq.queue || []
-        fbq.queue.push(args)
-      }
-
-      window.fbq = fbq
     }
 
     window.fbq('init', appConfig.metaPixelId)
