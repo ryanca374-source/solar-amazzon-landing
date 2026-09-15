@@ -65,3 +65,4 @@ npm run preview
 - Não é coletado CPF no formulário inicial.
 - O envio gera link direto para WhatsApp com mensagem pré-preenchida.
 - Se o WhatsApp comercial não estiver configurado, o formulário exibe erro e preserva os dados digitados.
+- Para usar a logo oficial, adicione o arquivo em `public/assets/solar-amazzon-logo.png`.

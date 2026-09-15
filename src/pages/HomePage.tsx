@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { BenefitCard } from '../components/BenefitCard'
 import { CTAButton } from '../components/CTAButton'
+import { CompanyLogo } from '../components/CompanyLogo'
 import { Header } from '../components/Header'
 import { LeadForm } from '../components/LeadForm'
 import { SectionTitle } from '../components/SectionTitle'
@@ -151,6 +152,10 @@ export const HomePage = () => {
       <footer className="bg-[#0d3b14] py-10 text-white">
         <div className="mx-auto grid max-w-6xl gap-6 px-4 md:grid-cols-2 md:px-6">
           <div>
+            <CompanyLogo
+              className="h-12 w-auto rounded-md bg-white/10 p-1"
+              fallbackClassName="h-12 w-12"
+            />
             <p className="text-xl font-bold">Solar Amazzon Energia Solar</p>
             <p className="mt-1 text-sm text-green-100">A pioneira da região</p>
             <p className="mt-4 text-sm text-green-100">Região de atendimento: sob consulta.</p>
