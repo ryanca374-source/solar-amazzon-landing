@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" fill="none">
+  <rect width="1200" height="630" fill="#1b5e20"/>
+  <circle cx="950" cy="120" r="80" fill="#ffc107"/>
+  <text x="80" y="250" fill="white" font-family="Arial, sans-serif" font-size="72" font-weight="700">Solar Amazzon</text>
+  <text x="80" y="330" fill="#ffc107" font-family="Arial, sans-serif" font-size="44" font-weight="700">A pioneira da região</text>
+  <text x="80" y="420" fill="white" font-family="Arial, sans-serif" font-size="34">Simulação personalizada de energia solar</text>
+</svg>
