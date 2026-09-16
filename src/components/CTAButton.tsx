@@ -16,7 +16,7 @@ export const CTAButton = ({ label, onClick, className = '' }: CTAButtonProps) =>
     <button
       type="button"
       onClick={handleClick}
-      className={`rounded-full bg-[#ffc107] px-6 py-3 text-sm font-bold uppercase tracking-wide text-[#1b5e20] shadow-md transition hover:-translate-y-0.5 hover:bg-[#ffd54f] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1b5e20] ${className}`}
+      className={`inline-flex items-center justify-center rounded-full bg-gradient-to-r from-emerald-400 via-lime-300 to-yellow-300 px-6 py-3 text-sm font-black uppercase tracking-[0.14em] text-emerald-950 shadow-[0_12px_28px_-14px_rgba(163,230,53,0.85)] transition hover:-translate-y-0.5 hover:shadow-[0_16px_32px_-14px_rgba(163,230,53,0.95)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-lime-300 ${className}`}
     >
       {label}
     </button>

@@ -1,7 +1,7 @@
 @import 'tailwindcss';
 
 :root {
-  color: #1f2937;
+  color: #e5e7eb;
   font-family: 'Inter', 'Segoe UI', Roboto, system-ui, -apple-system, sans-serif;
 }
 
@@ -11,5 +11,15 @@
 
 body {
   margin: 0;
-  background: #f8fff9;
+  min-height: 100vh;
+  background: #020b08;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+::selection {
+  background: #bef264;
+  color: #052e16;
 }

@@ -99,9 +99,12 @@ export const LeadForm = () => {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="grid gap-4 rounded-2xl bg-white p-6 shadow-lg">
+    <form
+      onSubmit={handleSubmit}
+      className="grid gap-4 rounded-3xl border border-white/10 bg-white/95 p-6 shadow-[0_22px_48px_-24px_rgba(15,23,42,0.7)] backdrop-blur md:p-7"
+    >
       <div className="grid gap-2">
-        <label htmlFor="name" className="text-sm font-medium text-[#1b5e20]">
+        <label htmlFor="name" className="text-sm font-semibold text-emerald-900">
           Nome completo*
         </label>
         <input
@@ -109,14 +112,14 @@ export const LeadForm = () => {
           type="text"
           value={form.name}
           onChange={(event) => setForm((current) => ({ ...current, name: event.target.value }))}
-          className="rounded-xl border border-slate-300 px-4 py-3 text-sm focus:border-[#4caf50] focus:outline-none"
+          className="rounded-xl border border-emerald-100 bg-white px-4 py-3 text-sm text-slate-700 focus:border-lime-400 focus:outline-none"
           placeholder="Digite seu nome"
           required
         />
       </div>
 
       <div className="grid gap-2">
-        <label htmlFor="whatsapp" className="text-sm font-medium text-[#1b5e20]">
+        <label htmlFor="whatsapp" className="text-sm font-semibold text-emerald-900">
           WhatsApp*
         </label>
         <input
@@ -124,14 +127,14 @@ export const LeadForm = () => {
           type="tel"
           value={form.whatsapp}
           onChange={(event) => setForm((current) => ({ ...current, whatsapp: event.target.value }))}
-          className="rounded-xl border border-slate-300 px-4 py-3 text-sm focus:border-[#4caf50] focus:outline-none"
+          className="rounded-xl border border-emerald-100 bg-white px-4 py-3 text-sm text-slate-700 focus:border-lime-400 focus:outline-none"
           placeholder="(92) 99999-9999"
           required
         />
       </div>
 
       <div className="grid gap-2">
-        <label htmlFor="city" className="text-sm font-medium text-[#1b5e20]">
+        <label htmlFor="city" className="text-sm font-semibold text-emerald-900">
           Cidade*
         </label>
         <input
@@ -139,14 +142,14 @@ export const LeadForm = () => {
           type="text"
           value={form.city}
           onChange={(event) => setForm((current) => ({ ...current, city: event.target.value }))}
-          className="rounded-xl border border-slate-300 px-4 py-3 text-sm focus:border-[#4caf50] focus:outline-none"
+          className="rounded-xl border border-emerald-100 bg-white px-4 py-3 text-sm text-slate-700 focus:border-lime-400 focus:outline-none"
           placeholder="Sua cidade"
           required
         />
       </div>
 
       <div className="grid gap-2">
-        <label htmlFor="energyBillRange" className="text-sm font-medium text-[#1b5e20]">
+        <label htmlFor="energyBillRange" className="text-sm font-semibold text-emerald-900">
           Valor aproximado da conta de energia*
         </label>
         <select
@@ -155,7 +158,7 @@ export const LeadForm = () => {
           onChange={(event) =>
             setForm((current) => ({ ...current, energyBillRange: event.target.value }))
           }
-          className="rounded-xl border border-slate-300 px-4 py-3 text-sm focus:border-[#4caf50] focus:outline-none"
+          className="rounded-xl border border-emerald-100 bg-white px-4 py-3 text-sm text-slate-700 focus:border-lime-400 focus:outline-none"
           required
         >
           <option value="">Selecione uma faixa</option>
@@ -168,7 +171,7 @@ export const LeadForm = () => {
       </div>
 
       <div className="grid gap-2">
-        <label htmlFor="installationType" className="text-sm font-medium text-[#1b5e20]">
+        <label htmlFor="installationType" className="text-sm font-semibold text-emerald-900">
           Tipo de instalação*
         </label>
         <select
@@ -177,7 +180,7 @@ export const LeadForm = () => {
           onChange={(event) =>
             setForm((current) => ({ ...current, installationType: event.target.value }))
           }
-          className="rounded-xl border border-slate-300 px-4 py-3 text-sm focus:border-[#4caf50] focus:outline-none"
+          className="rounded-xl border border-emerald-100 bg-white px-4 py-3 text-sm text-slate-700 focus:border-lime-400 focus:outline-none"
           required
         >
           <option value="">Selecione uma opção</option>
@@ -199,7 +202,7 @@ export const LeadForm = () => {
         <span>
           Autorizo a Solar Amazzon a entrar em contato comigo para apresentar informações e
           proposta de energia solar. Li e concordo com a{' '}
-          <Link className="font-semibold text-[#1b5e20] underline" to="/politica-de-privacidade">
+          <Link className="font-semibold text-emerald-800 underline" to="/politica-de-privacidade">
             Política de Privacidade
           </Link>
           .
@@ -243,7 +246,7 @@ export const LeadForm = () => {
 
       <button
         type="submit"
-        className="mt-2 rounded-full bg-[#1b5e20] px-6 py-3 text-sm font-bold uppercase tracking-wide text-white transition hover:bg-[#2e7d32]"
+        className="mt-2 rounded-full bg-emerald-900 px-6 py-3 text-sm font-black uppercase tracking-[0.15em] text-lime-100 transition hover:bg-emerald-800"
       >
         Quero minha simulação gratuita
       </button>
