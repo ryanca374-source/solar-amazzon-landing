@@ -43,9 +43,10 @@ npm run preview
 
 ### GitHub Pages
 
-1. Rode `npm run build`
-2. Publique o conteúdo de `dist/` no branch de publicação (ou use GitHub Actions)
-3. Como o app usa `BrowserRouter`, configure fallback SPA (ex.: copiar `index.html` para `404.html` no deploy do Pages)
+1. Em **Settings → Pages**, selecione **Source: GitHub Actions**.
+2. Faça push no branch `main` (ou `copilot/create-solar-amazzon-landing-page` neste projeto).
+3. O workflow `.github/workflows/deploy-pages.yml` faz o build, publica e cria `404.html` para fallback SPA automaticamente.
+4. URL oficial: `https://ryanca374-source.github.io/solar-amazzon-landing/`
 
 ### Vercel
 
